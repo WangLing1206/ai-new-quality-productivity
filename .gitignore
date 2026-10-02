@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Deliverables & scratch
+/videos/*.mp4
+/videos/*.webm
+/docs/*.docx
+/scripts/*.png
+/scripts/*.webm

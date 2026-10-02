@@ -23,6 +23,18 @@ export interface Milestone {
   description: string
 }
 
+export interface PolicyItem {
+  year: string
+  title: string
+  source: string
+}
+
+export interface TechStackItem {
+  title: string
+  description: string
+  icon: string
+}
+
 export interface Citation {
   id: string
   text: string
@@ -205,6 +217,59 @@ export const milestones: Milestone[] = [
     description: 'AI 驱动的现代化产业体系基本建成，高质量发展格局巩固。',
   },
 ]
+
+export const policyTimeline: PolicyItem[] = [
+  { year: '2017', title: '《新一代人工智能发展规划》', source: '国务院' },
+  { year: '2019', title: '《关于促进人工智能和实体经济深度融合的指导意见》', source: '发改委等' },
+  { year: '2022', title: '《“十四五”数字经济发展规划》', source: '国务院' },
+  { year: '2023', title: '《生成式人工智能服务管理暂行办法》', source: '网信办等' },
+  { year: '2024', title: '《人工智能发展白皮书》', source: '中国信通院' },
+]
+
+export const techStack: TechStackItem[] = [
+  { title: '大模型', description: '以 Transformer 为核心，具备通用理解与生成能力。', icon: 'BrainCircuit' },
+  { title: '计算机视觉', description: '图像识别、目标检测、视频分析支撑智能制造与安防。', icon: 'Eye' },
+  { title: '自然语言处理', description: '语义理解、机器翻译、智能问答重塑信息交互。', icon: 'MessageSquareText' },
+  { title: '智能决策', description: '强化学习与运筹优化，提升复杂系统决策效率。', icon: 'GitBranch' },
+  { title: '机器人技术', description: '具身智能推动生产制造与服务场景自动化升级。', icon: 'Bot' },
+  { title: '知识图谱', description: '结构化知识关联，支撑金融风控与科研发现。', icon: 'Network' },
+]
+
+export const investmentData = {
+  sectors: ['智能制造', '智慧医疗', '自动驾驶', '智慧金融', 'AIGC', '智慧农业'],
+  values: [320, 245, 198, 176, 154, 87],
+}
+
+export const adoptionData = [
+  { name: '智能客服', value: 68 },
+  { name: '数据分析', value: 56 },
+  { name: '营销推荐', value: 48 },
+  { name: '质量检测', value: 42 },
+  { name: '研发设计', value: 35 },
+  { name: '其他', value: 22 },
+]
+
+export const sankeyData = {
+  nodes: [
+    { name: '数据要素' }, { name: '算力基础设施' }, { name: '算法与大模型' },
+    { name: '智能制造' }, { name: '智慧医疗' }, { name: '智慧金融' },
+    { name: '智慧农业' }, { name: '智慧交通' }, { name: '新质生产力' },
+  ],
+  links: [
+    { source: 0, target: 1, value: 100 },
+    { source: 1, target: 2, value: 100 },
+    { source: 2, target: 3, value: 30 },
+    { source: 2, target: 4, value: 20 },
+    { source: 2, target: 5, value: 18 },
+    { source: 2, target: 6, value: 12 },
+    { source: 2, target: 7, value: 20 },
+    { source: 3, target: 8, value: 30 },
+    { source: 4, target: 8, value: 20 },
+    { source: 5, target: 8, value: 18 },
+    { source: 6, target: 8, value: 12 },
+    { source: 7, target: 8, value: 20 },
+  ],
+}
 
 export const citations: Citation[] = [
   {

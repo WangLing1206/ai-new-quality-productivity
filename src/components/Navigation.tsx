@@ -6,8 +6,12 @@ const navItems = [
   { label: '解读', href: '#concept' },
   { label: '数据', href: '#stats' },
   { label: '趋势', href: '#trend' },
+  { label: '投资', href: '#investment' },
   { label: '赋能', href: '#industry' },
   { label: '路径', href: '#flow' },
+  { label: '链路', href: '#sankey' },
+  { label: '技术', href: '#tech' },
+  { label: '政策', href: '#policy' },
   { label: '展望', href: '#future' },
 ]
 

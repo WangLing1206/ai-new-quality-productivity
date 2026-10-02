@@ -16,6 +16,10 @@
     background-attachment: fixed;
   }
 
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+
   ::selection {
     background: rgba(0, 224, 255, 0.25);
     color: #fff;

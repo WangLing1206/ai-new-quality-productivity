@@ -23,7 +23,8 @@ export default {
       },
       fontFamily: {
         sans: ['"Noto Sans SC"', 'Inter', 'system-ui', 'sans-serif'],
-        display: ['"Noto Sans SC"', 'Inter', 'system-ui', 'sans-serif'],
+        display: ['"Noto Serif SC"', '"Noto Sans SC"', 'Inter', 'serif'],
+        serif: ['"Noto Serif SC"', '"Noto Sans SC"', 'serif'],
       },
       backgroundImage: {
         'hero-gradient': 'radial-gradient(circle at 50% 0%, rgba(0,224,255,0.18), transparent 55%), linear-gradient(180deg, #050C18 0%, #0B1F3A 100%)',

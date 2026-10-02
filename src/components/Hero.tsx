@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
 import { heroContent } from '../data/content'
 import { useEffect, useRef } from 'react'
+import { HeroVisual } from './HeroVisual'
 
 function ParticleNetwork() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -103,7 +104,10 @@ export function Hero() {
     >
       <div className="absolute inset-0 bg-hero-gradient" />
       <div className="absolute inset-0 bg-grid opacity-30" />
-      <ParticleNetwork />
+      <HeroVisual />
+      <div className="absolute inset-0 opacity-40">
+        <ParticleNetwork />
+      </div>
 
       <div className="relative z-10 max-w-5xl">
         <motion.div

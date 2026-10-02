@@ -1,15 +1,26 @@
 import { BrainCircuit, Network, Rocket } from 'lucide-react'
 import { motion } from 'framer-motion'
-import { conceptCards, radarData, stats } from './data/content'
+import {
+  conceptCards,
+  radarData,
+  stats,
+} from './data/content'
+import { BackToTop } from './components/BackToTop'
+import { BarChart } from './components/BarChart'
 import { FlowDiagram } from './components/FlowDiagram'
 import { Footer } from './components/Footer'
 import { Hero } from './components/Hero'
 import { IndustryGrid } from './components/IndustryGrid'
 import { LineChart } from './components/LineChart'
 import { Navigation } from './components/Navigation'
+import { PieChart } from './components/PieChart'
+import { PolicyTimeline } from './components/PolicyTimeline'
 import { RadarChart } from './components/RadarChart'
+import { SankeyDiagram } from './components/SankeyDiagram'
+import { ScrollProgress } from './components/ScrollProgress'
 import { Section, SectionHeader } from './components/Section'
 import { StatCounter } from './components/StatCounter'
+import { TechStack } from './components/TechStack'
 import { Timeline } from './components/Timeline'
 
 const conceptIcons: Record<string, React.ReactNode> = {
@@ -39,6 +50,7 @@ function ConceptCard({ card, index }: { card: typeof conceptCards[0]; index: num
 function App() {
   return (
     <div className="min-h-screen bg-deep-900">
+      <ScrollProgress />
       <Navigation />
       <Hero />
 
@@ -77,7 +89,19 @@ function App() {
         <LineChart />
       </Section>
 
-      <Section id="industry">
+      <Section id="investment">
+        <SectionHeader
+          eyebrow="投资结构"
+          title="AI 投资与场景渗透"
+          description="从资本投向到企业应用场景，全面呈现人工智能的产业热度与实际落地。"
+        />
+        <div className="grid gap-6 lg:grid-cols-2">
+          <BarChart />
+          <PieChart />
+        </div>
+      </Section>
+
+      <Section id="industry" gradient>
         <SectionHeader
           eyebrow="赋能百业"
           title="人工智能重塑千行百业"
@@ -86,13 +110,22 @@ function App() {
         <IndustryGrid />
       </Section>
 
-      <Section id="flow" gradient>
+      <Section id="flow">
         <SectionHeader
           eyebrow="跃迁路径"
           title="从数据要素到新质生产力"
           description="人工智能驱动的生产力跃升，是一个由数据、算力、算法到产业应用的系统工程。"
         />
         <FlowDiagram />
+      </Section>
+
+      <Section id="sankey" gradient>
+        <SectionHeader
+          eyebrow="转化链路"
+          title="AI 生产力转化桑基图"
+          description="数据、算力、算法如何流向千行百业，最终汇聚为新质生产力。"
+        />
+        <SankeyDiagram />
       </Section>
 
       <Section id="innovation">
@@ -121,6 +154,24 @@ function App() {
         </div>
       </Section>
 
+      <Section id="tech" gradient>
+        <SectionHeader
+          eyebrow="技术底座"
+          title="人工智能核心技术栈"
+          description="大模型、计算机视觉、自然语言处理等关键技术，共同构筑 AI 赋能产业的底座。"
+        />
+        <TechStack />
+      </Section>
+
+      <Section id="policy">
+        <SectionHeader
+          eyebrow="政策演进"
+          title="国家战略与政策时间线"
+          description="从《新一代人工智能发展规划》到系列配套政策，国家层面持续推动 AI 与实体经济深度融合。"
+        />
+        <PolicyTimeline />
+      </Section>
+
       <Section id="future" gradient>
         <SectionHeader
           eyebrow="未来展望"
@@ -131,6 +182,7 @@ function App() {
       </Section>
 
       <Footer />
+      <BackToTop />
     </div>
   )
 }
